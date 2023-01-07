@@ -5,9 +5,9 @@ the two endpoints of the ith line are (i, 0) and (i, height[i]).
 Find two lines that together with the x-axis form a container, such that the container contains the most water.
 Return the maximum amount of water a container can store.
 
-medium
-bruth force - o(n^2) medium
-o(n) medium
+level: medium
+answer 1: bruth force - o(n^2) - medium
+answer 2: o(n) - medium
 */
 
 

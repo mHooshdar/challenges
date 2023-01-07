@@ -3,9 +3,9 @@ https://leetcode.com/problems/two-sum/
 Given an array of integers, return the indices of the two numbers that
 added up to a given target
 
-easy
-bruth force - o(n^2) easy
-o(n) easy
+level: easy
+answer 1: bruth force - o(n^2) - easy
+answer 2: o(n) - easy
 */
 
 
