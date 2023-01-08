@@ -4,7 +4,7 @@ Given an array of integers, return the indices of the two numbers that
 added up to a given target
 
 level: easy
-answer 1: bruth force - o(n^2) - easy
+answer 1: brute force - o(n^2) - easy
 answer 2: o(n) - easy
 */
 

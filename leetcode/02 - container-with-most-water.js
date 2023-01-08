@@ -6,7 +6,7 @@ Find two lines that together with the x-axis form a container, such that the con
 Return the maximum amount of water a container can store.
 
 level: medium
-answer 1: bruth force - o(n^2) - medium
+answer 1: brute force - o(n^2) - medium
 answer 2: o(n) - medium
 */
 
@@ -23,9 +23,7 @@ function maxArea(height) {
       if (i === j) continue;
       const y = Math.min(height[i], height[j]);
       const multiply = y * (j - i);
-      if (multiply > max) {
-        max = multiply;
-      }
+      max = Math.max(multiply, max);
     }
   }
   return max;
@@ -44,9 +42,7 @@ function maxArea2(height) {
     let x = j - i;
     const y = Math.min(height[i], height[j]);
     const multiply = y * x;
-    if (multiply > max) {
-      max = multiply
-    }
+    max = Math.max(multiply, max);
     height[i] < height[j] ? i++ : j--;
   }
   return max;
