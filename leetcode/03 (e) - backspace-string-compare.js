@@ -6,7 +6,7 @@ Note that after backspacing an empty text, the text will continue empty.
 
 level: easy
 answer 1: o(n) s(n) - easy
-answer 2: o(n) s(1) - easy
+answer 2: o(n) s(1) - medium
 */
 
 // o(n), s(n)
