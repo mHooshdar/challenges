@@ -10,7 +10,6 @@ answer 1: brute force - o(n^2) - medium
 answer 2: o(n) - medium
 */
 
-
 // s(1), o(n^2)
 /**
  * @param {number[]} height
@@ -38,7 +37,7 @@ function maxArea2(height) {
   let max = 0;
   let i = 0;
   let j = height.length - 1;
-  while(i !== j) {
+  while (i !== j) {
     let x = j - i;
     const y = Math.min(height[i], height[j]);
     const multiply = y * x;
@@ -48,8 +47,8 @@ function maxArea2(height) {
   return max;
 }
 
-console.log(maxArea([1,8,6,2,5,4,8,3,7]))
-console.log(maxArea([1,1]))
+console.log(maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7]));
+console.log(maxArea([1, 1]));
 
-console.log(maxArea2([1,8,6,2,5,4,8,3,7]))
-console.log(maxArea2([1,1]))
+console.log(maxArea2([1, 8, 6, 2, 5, 4, 8, 3, 7]));
+console.log(maxArea2([1, 1]));
