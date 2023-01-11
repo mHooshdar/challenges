@@ -1,12 +1,12 @@
 /*
+Level: easy
+Answer 1: brute force - o(n) s(n) - easy
+Answer 2: optimal - o(n) s(1) - medium
+
 https://leetcode.com/problems/backspace-string-compare/
-Given two strings s and t, return true if they are equal when both are typed into empty text editors. '#' means a backspace character.
-
+Given two strings s and t, return true if they are equal when both are typed into empty text editors.
+'#' means a backspace character.
 Note that after backspacing an empty text, the text will continue empty.
-
-level: easy
-answer 1: o(n) s(n) - easy
-answer 2: o(n) s(1) - medium
 */
 
 // o(n), s(n)
