@@ -1,6 +1,6 @@
 /*
 Level: easy
-o(n) - easy
+o(n) s(n) - easy
 
 https://leetcode.com/problems/valid-palindrome/description/
 A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.
@@ -8,7 +8,7 @@ A phrase is a palindrome if, after converting all uppercase letters into lowerca
 Given a string `s`, return `true` if it is a palindrome, or `false` otherwise.
 */
 
-// s(1), o(n^2)
+// s(n), o(n)
 /**
  * @param {number[]} s
  * @return {boolean}
