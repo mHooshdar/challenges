@@ -46,6 +46,13 @@ function addTwoNumbers(l1, l2) {
   return l1Length >= l2Length ? l1 : l2;
 }
 
+// o(n), s(1)
+/**
+ * @param {ListNode} l1
+ * @param {ListNode} l2
+ * @param {ListNode} carry
+ * @return {ListNode}
+ */
 function addTwoNumbersRecursive(l1, l2, carry = 0) {
   let currentL1 = l1?.val ?? 0;
   let currentL2 = l2?.val ?? 0;
