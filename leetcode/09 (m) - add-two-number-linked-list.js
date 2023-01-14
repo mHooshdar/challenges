@@ -68,6 +68,6 @@ function addTwoNumbersRecursive(l1, l2, carry = 0) {
 
   return new ListNode(
     sum % 10,
-    addTwoNumbers(l1?.next ?? null, l2?.next ?? null, carry),
+    addTwoNumbersRecursive(l1?.next ?? null, l2?.next ?? null, carry),
   );
 }
