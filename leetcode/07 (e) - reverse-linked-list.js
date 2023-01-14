@@ -11,7 +11,7 @@ Given the `head` of a singly linked list, reverse the list, and return the rever
  * @param {ListNode} head
  * @return {ListNode}
  */
-var reverseList = function (head) {
+function reverseList(head) {
   let prev = null;
   let current = head;
   while (current) {
@@ -21,4 +21,4 @@ var reverseList = function (head) {
     current = next;
   }
   return prev;
-};
+}
