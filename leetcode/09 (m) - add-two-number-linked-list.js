@@ -45,6 +45,7 @@ function addTwoNumbers(l1, l2) {
   }
   return l1Length >= l2Length ? l1 : l2;
 }
+
 function addTwoNumbersRecursive(l1, l2, carry = 0) {
   let currentL1 = l1?.val ?? 0;
   let currentL2 = l2?.val ?? 0;
