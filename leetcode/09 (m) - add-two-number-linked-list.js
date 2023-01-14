@@ -45,3 +45,21 @@ function addTwoNumbers(l1, l2) {
   }
   return l1Length >= l2Length ? l1 : l2;
 }
+function addTwoNumbersRecursive(l1, l2, carry = 0) {
+  let currentL1 = l1?.val ?? 0;
+  let currentL2 = l2?.val ?? 0;
+  let sum = currentL1 + currentL2 + carry;
+
+  if (l1 === null && l2 === null) {
+    if (carry) {
+      return new ListNode(sum, null);
+    }
+    return null;
+  }
+  carry = Math.floor(sum / 10);
+
+  return new ListNode(
+    sum % 10,
+    addTwoNumbers(l1?.next ?? null, l2?.next ?? null, carry),
+  );
+}
