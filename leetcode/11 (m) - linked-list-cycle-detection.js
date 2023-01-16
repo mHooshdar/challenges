@@ -1,7 +1,7 @@
 /*
 Level: medium
 Answer 1: o(n) s(n) - medium
-Answer 2: o(n) s(1) - medium
+Answer 2: o(n) s(1) - medium -> named: Floyd's tortoise and hare algorithm
 
 https://leetcode.com/problems/linked-list-cycle-ii/
 Given the head of a linked list, return the node where the cycle begins. If there is no cycle, return null.
@@ -20,22 +20,48 @@ Do not modify the linked list.
  */
 function detectCycle(head) {
   let seenNodes = new Set();
-  let current = head
-  while(current) {
+  let current = head;
+  while (current) {
     if (seenNodes.has(current)) {
-      return current
+      return current;
     }
-    seenNodes.add(current)
-    current = current.next
+    seenNodes.add(current);
+    current = current.next;
   }
-  return current
+  return current;
 }
 
 // o(n), s(1)
+// Floyd's tortoise and hare algorithm
 /**
  * @param {Node} head
  * @return {Node}
  */
 function detectCycl2(head) {
-  
+  let tortoise = head;
+  let hare = head;
+  // while ((tortoise && hare) || turtoise === hare) {
+  while (true) {
+    if (!tortoise) {
+      return null;
+    }
+    // jump 1
+    tortoise = tortoise.next;
+    hare = hare.next;
+    // jump 2
+    if (hare === null || hare.next === null) {
+      return null;
+    } else {
+      hare = hare.next;
+    }
+    if (tortoise === hare) {
+      break;
+    }
+  }
+  let cycleNode = head;
+  while (cycleNode !== tortoise) {
+    cycleNode = cycleNode.next;
+    tortoise = tortoise.next;
+  }
+  return cycleNode;
 }
