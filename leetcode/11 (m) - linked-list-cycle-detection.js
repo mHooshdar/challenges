@@ -40,15 +40,14 @@ function detectCycle(head) {
 function detectCycl2(head) {
   let tortoise = head;
   let hare = head;
-  // while ((tortoise && hare) || turtoise === hare) {
+  if (!head || !head.next) {
+    return null;
+  }
   while (true) {
-    if (!tortoise) {
-      return null;
-    }
-    // jump 1
+    // 1 jump
     tortoise = tortoise.next;
+    // 2 jump
     hare = hare.next;
-    // jump 2
     if (hare === null || hare.next === null) {
       return null;
     } else {
