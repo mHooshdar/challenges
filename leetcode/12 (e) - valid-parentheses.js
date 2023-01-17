@@ -18,7 +18,7 @@ Every close bracket has a corresponding open bracket of the same type.
  * @param {string} s
  * @return {boolean}
  */
-function isValidParantheses(s) {
+function isValidParentheses(s) {
   let stack = [];
   const start = { '(': ')', '{': '}', '[': ']' };
   const end = [')', '}', ']'];
