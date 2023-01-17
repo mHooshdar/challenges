@@ -5,6 +5,7 @@ Answer 2: optimal - o(n) - easy
 
 https://leetcode.com/problems/two-sum/
 Given an array of integers, return the indices of the two numbers that added up to a given target
+#easy
 */
 
 // s(1), o(n^2)

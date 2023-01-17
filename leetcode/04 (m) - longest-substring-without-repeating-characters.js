@@ -7,6 +7,7 @@ https://leetcode.com/problems/longest-substring-without-repeating-characters/
 Given a string `s`, find the length of the longest substring without repeating characters.
 
 ‍‍‍`A substring is a contiguous non-empty sequence of characters within a string.`
+#medium
 */
 
 // o(n), s(n)

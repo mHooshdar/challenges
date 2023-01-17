@@ -11,6 +11,7 @@ Given the `head` of the first level of the list, flatten the list so that all th
 Let `curr` be a node with a child list. The nodes in the child list should appear after `curr` and before `curr.next` in the flattened list.
 
 Return the `head` of the flattened list. The nodes in the list must have all of their child pointers set to `null`.
+#medium
 */
 
 // o(n), s(1)
