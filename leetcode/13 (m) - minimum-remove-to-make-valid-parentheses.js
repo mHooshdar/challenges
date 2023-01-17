@@ -1,7 +1,7 @@
 /*
 Minimum Remove to Make Valid Parentheses
-Level: easy
-o(n) s(n) - easy
+Level: medium
+o(n) s(n) - medium
 
 https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/
 Given a string s of '(' , ')' and lowercase English characters.
@@ -22,5 +22,21 @@ It can be written as (A), where A is a valid string.
  * @return {string}
  */
 function minRemoveToMakeValid(s) {
-  
+  let stack = [];
+  let result = s;
+  for (let i = 0; i < s.length; i++) {
+    const head = stack[stack.length - 1];
+    const char = s.charAt(i);
+    if (char === '(') {
+      stack.push({ char, i });
+    } else if (char === ')') {
+      head?.char === '(' ? stack.pop() : stack.push({ char, i });
+    }
+  }
+  while (stack.length) {
+    const el = stack.pop();
+    result =
+      result.substring(0, el.i) + result.substring(el.i + 1, result.length);
+  }
+  return result;
 }
