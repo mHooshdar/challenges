@@ -16,12 +16,44 @@ It can be written as (A), where A is a valid string.
 #medium
 */
 
+function removeString(s, i) {
+  return s.substring(0, i) + s.substring(i + 1, s.length);
+}
+
 // o(n), s(n)
 /**
  * @param {string} s
  * @return {string}
  */
 function minRemoveToMakeValid(s) {
+  let stack = [];
+  let result = s;
+  for (let i = 0; i < result.length; i++) {
+    const char = result.charAt(i);
+    if (char === '(') {
+      stack.push(i);
+    } else if (char === ')') {
+      if (!stack.length) {
+        result = removeString(result, i);
+        i--;
+      } else {
+        stack.pop();
+      }
+    }
+  }
+  while (stack.length) {
+    const i = stack.pop();
+    result = removeString(result, i);
+  }
+  return result;
+}
+
+// o(n), s(n)
+/**
+ * @param {string} s
+ * @return {string}
+ */
+function minRemoveToMakeValid2(s) {
   let stack = [];
   let result = s;
   for (let i = 0; i < s.length; i++) {
@@ -35,8 +67,13 @@ function minRemoveToMakeValid(s) {
   }
   while (stack.length) {
     const el = stack.pop();
-    result =
-      result.substring(0, el.i) + result.substring(el.i + 1, result.length);
+    result = removeString(result, el.i);
   }
   return result;
 }
+
+console.log(minRemoveToMakeValid('a)b(c)d'));
+console.log(minRemoveToMakeValid('lee(t(c)o)de)"'));
+
+console.log(minRemoveToMakeValid2('a)b(c)d'));
+console.log(minRemoveToMakeValid2('lee(t(c)o)de)"'));
