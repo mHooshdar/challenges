@@ -35,3 +35,7 @@ function isValidParentheses(s) {
   }
   return !stack.length;
 }
+
+console.log(isValidParentheses('()'))
+console.log(isValidParentheses('()[]{}'))
+console.log(isValidParentheses('(]'))
