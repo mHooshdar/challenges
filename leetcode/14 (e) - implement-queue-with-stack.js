@@ -21,40 +21,52 @@ Depending on your language, the stack may not be supported natively. You may sim
 #easy
 */
 
-function MyQueue() {
-    
-};
+function MyQueue() {}
 
-/** 
+// o(1)
+/**
  * @param {number} x
  * @return {void}
  */
-MyQueue.prototype.push = function(x) {
-    
+MyQueue.prototype.push = function (x) {
+  this.in.push(x);
 };
 
+// o(n)
 /**
  * @return {number}
  */
-MyQueue.prototype.pop = function() {
-    
+MyQueue.prototype.pop = function () {
+  if (!this.out.length) {
+    while (this.in.length) {
+      this.out.push(this.in.pop());
+    }
+  }
+  return this.out.pop();
 };
 
+// o(n)
 /**
  * @return {number}
  */
-MyQueue.prototype.peek = function() {
-    
+MyQueue.prototype.peek = function () {
+  if (!this.out.length) {
+    while (this.in.length) {
+      this.out.push(this.in.pop());
+    }
+  }
+  return this.out[this.out.length - 1];
 };
 
+// o(1)
 /**
  * @return {boolean}
  */
-MyQueue.prototype.empty = function() {
-    
+MyQueue.prototype.empty = function () {
+  return !this.out.length && !this.in.length;
 };
 
-/** 
+/**
  * Your MyQueue object will be instantiated and called as such:
  * var obj = new MyQueue()
  * obj.push(x)
@@ -62,9 +74,3 @@ MyQueue.prototype.empty = function() {
  * var param_3 = obj.peek()
  * var param_4 = obj.empty()
  */
-
-console.log(minRemoveToMakeValid('a)b(c)d'));
-console.log(minRemoveToMakeValid('lee(t(c)o)de)"'));
-
-console.log(minRemoveToMakeValid2('a)b(c)d'));
-console.log(minRemoveToMakeValid2('lee(t(c)o)de)"'));
