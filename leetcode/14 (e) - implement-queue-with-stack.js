@@ -24,6 +24,7 @@ Depending on your language, the stack may not be supported natively. You may sim
 function MyQueue() {
   this.in = [];
   this.out = [];
+  this.front = null
 }
 
 // o(1)
@@ -32,7 +33,10 @@ function MyQueue() {
  * @return {void}
  */
 MyQueue.prototype.push = function (x) {
-  this.in.push(x);
+  if (!this.in.length) {
+    this.front = x;
+  }
+  this.in.push(x)
 };
 
 // o(n)
@@ -59,6 +63,9 @@ MyQueue.prototype.peek = function () {
     }
   }
   return this.out[this.out.length - 1];
+
+  // other solution o(1)
+  // return return this.out.length ? this.out[this.out.length - 1] : this.front
 };
 
 // o(1)
