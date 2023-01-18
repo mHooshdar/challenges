@@ -21,7 +21,10 @@ Depending on your language, the stack may not be supported natively. You may sim
 #easy
 */
 
-function MyQueue() {}
+function MyQueue() {
+  this.in = [];
+  this.out = [];
+}
 
 // o(1)
 /**
