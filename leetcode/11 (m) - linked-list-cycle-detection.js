@@ -1,4 +1,5 @@
 /*
+Linked List Cycle Detection
 Level: medium
 Answer 1: o(n) s(n) - medium
 Answer 2: o(n) s(1) - medium -> named: Floyd's tortoise and hare algorithm

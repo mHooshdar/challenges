@@ -1,4 +1,5 @@
 /*
+Longest Substring Without Repeating Characters
 Level: medium
 Answer 1: brute force - o(n^2) s(n) - medium
 Answer 2: optimal - o(n) s(n) - medium
