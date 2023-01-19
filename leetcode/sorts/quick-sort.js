@@ -7,6 +7,11 @@ https://leetcode.com/problems/sort-an-array/
 Given an array of integers nums, sort the array in ascending order and return it.
 
 You must solve the problem without using any built-in functions in O(nlog(n)) time complexity and with the smallest space complexity possible.
+
+Overal Time Order: O(nLogn)
+Worst case Time Order: O(n^2) - When The array is sorted
+Space Orer: S(1)
+Worst Case Space Orer: S(logn)
 #medium
 */
 
