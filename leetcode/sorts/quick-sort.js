@@ -10,10 +10,38 @@ You must solve the problem without using any built-in functions in O(nlog(n)) ti
 #medium
 */
 
+function swap(nums, i, j) {
+  let temp = nums[j];
+  nums[j] = nums[i];
+  nums[i] = temp;
+}
+
+function quickSortHelper(nums, start, end) {
+  if (start >= end) return nums;
+
+  let pivotValue = nums[start];
+  let smaller = start;
+  for (let i = start + 1; i <= end; i++) {
+    let bigger = i;
+    if (nums[bigger] < pivotValue) {
+      smaller++;
+      swap(nums, smaller, bigger);
+    }
+  }
+  swap(nums, start, smaller);
+
+  quickSortHelper(nums, start, smaller - 1);
+  quickSortHelper(nums, smaller + 1, end);
+  return nums;
+}
+
 /**
  * @param {number[]} nums
  * @return {number[]}
  */
-var quickSortArray = function(nums) {
-    
-};
+function quickSortArray(nums) {
+  return quickSortHelper(nums, 0, nums.length - 1);
+}
+
+console.log(quickSortArray([5, 2, 3, 1]));
+console.log(quickSortArray([5, 1, 1, 2, 0, 0]));
