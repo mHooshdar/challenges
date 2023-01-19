@@ -40,6 +40,7 @@ function quickSortHelper(nums, start, end) {
   return nums;
 }
 
+// o(nlogn), s(nlogn)
 /**
  * @param {number[]} nums
  * @return {number[]}
