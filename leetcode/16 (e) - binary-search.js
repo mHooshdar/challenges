@@ -1,7 +1,7 @@
 /*
-Implement Kth Longest Element In An Array
+Binary Search
 Level: easy
-Quick Sort: o(logn) s(1) - easy
+o(logn) s(1) - easy
 
 https://leetcode.com/problems/binary-search/
 Given an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums. If target exists, then return its index. Otherwise, return -1.
@@ -17,9 +17,9 @@ You must write an algorithm with O(log n) runtime complexity.
  * @param {number} target
  * @return {number}
  */
-function search(nums, target) {
-  let left = 0;
-  let right = nums.length - 1;
+function binarySearch(nums, target, leftInput, rightInput) {
+  let left = leftInput ?? 0;
+  let right = rightInput ?? nums.length - 1;
   while (left <= right) {
     const mid = Math.floor((left + right) / 2);
     if (nums[mid] === target) {
@@ -33,6 +33,6 @@ function search(nums, target) {
   return -1;
 }
 
-console.log(search([-1, 0, 3, 5, 9, 12], 9));
-console.log(search([-1, 0, 3, 5, 9, 12], 2));
-console.log(search([5], 5));
+console.log(binarySearch([-1, 0, 3, 5, 9, 12], 9));
+console.log(binarySearch([-1, 0, 3, 5, 9, 12], 2));
+console.log(binarySearch([5], 5));
