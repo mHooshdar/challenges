@@ -1,7 +1,7 @@
 /*
 Maximum Depth of Binary Tree
 Level: easy
-Worst case: o(n), s(logn) - easy
+Worst case: o(n), s(n) - easy
 
 https://leetcode.com/problems/maximum-depth-of-binary-tree/
 Given the `root` of a binary tree, return its maximum depth.
@@ -20,7 +20,7 @@ A binary tree's maximum depth is the number of nodes along the longest path from
  * }
  */
 
-// o(n), s(logn)
+// o(n), s(n)
 /**
  * @param {TreeNode} root
  * @return {number}
