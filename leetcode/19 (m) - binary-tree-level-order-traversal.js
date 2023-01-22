@@ -1,10 +1,10 @@
 /*
-Maximum Depth of Binary Tree
+Binary Tree Level Order Traversal
 Level: medium
 Worst case: o(n), s(n) - medium
 
-https://leetcode.com/problems/binary-tree-right-side-view/
-Given the root of a binary tree, imagine yourself standing on the right side of it, return the values of the nodes you can see ordered from top to bottom.
+https://leetcode.com/problems/binary-tree-level-order-traversal/
+Given the root of a binary tree, return the level order traversal of its nodes' values. (i.e., from left to right, level by level).
 
 #medium
 */
@@ -23,6 +23,6 @@ Given the root of a binary tree, imagine yourself standing on the right side of 
  * @param {TreeNode} root
  * @return {number}
  */
-function rightSideView(root) {
+function levelOrder(root) {
   
 }
