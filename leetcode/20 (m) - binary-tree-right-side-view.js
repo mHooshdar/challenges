@@ -18,7 +18,7 @@ Given the root of a binary tree, imagine yourself standing on the right side of 
  * }
  */
 
-// o(n), s(n)
+// o(n), s(n), bfs approach  > order of space is the number of nodes in the last layer of the tree
 /**
  * @param {TreeNode} root
  * @return {number[]}
@@ -41,4 +41,20 @@ function rightSideView(root) {
     result.push(currentLevelValues[currentLevelValues.length - 1]);
   }
   return result;
+}
+
+function traverseTree(node, res, depth = 0) {
+  if (res.length <= depth) res.push(node.val);
+  if (node.right) traverseTree(node.right, res, depth + 1);
+  if (node.left) traverseTree(node.left, res, depth + 1);
+  return res;
+}
+
+// o(n), s(n), dfs approach => order of space is the height of the tree t
+/**
+ * @param {TreeNode} root
+ * @return {number[]}
+ */
+function rightSideView2(root) {
+  return !root ? [] : traverseTree(root, []);
 }
