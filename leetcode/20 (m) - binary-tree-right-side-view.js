@@ -24,5 +24,21 @@ Given the root of a binary tree, imagine yourself standing on the right side of 
  * @return {number[]}
  */
 function rightSideView(root) {
-  
+  let result = [];
+  if (!root) return result;
+  const q = [root];
+  while (q.length) {
+    const length = q.length;
+    let count = 0;
+    const currentLevelValues = [];
+    while (count < length) {
+      const node = q.shift();
+      currentLevelValues.push(node.val);
+      if (node.left) q.push(node.left);
+      if (node.right) q.push(node.right);
+      count++;
+    }
+    result.push(currentLevelValues[currentLevelValues.length - 1]);
+  }
+  return result;
 }
