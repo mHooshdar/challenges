@@ -21,7 +21,7 @@ Given the root of a binary tree, imagine yourself standing on the right side of 
 // o(n), s(n)
 /**
  * @param {TreeNode} root
- * @return {number}
+ * @return {number[]}
  */
 function rightSideView(root) {
   

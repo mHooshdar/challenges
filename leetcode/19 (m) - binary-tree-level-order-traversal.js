@@ -21,8 +21,24 @@ Given the root of a binary tree, return the level order traversal of its nodes' 
 // o(n), s(n)
 /**
  * @param {TreeNode} root
- * @return {number}
+ * @return {number[][]}
  */
 function levelOrder(root) {
-  
+  let result = [];
+  if (!root) return result;
+  const q = [root];
+  while (q.length) {
+    const length = q.length;
+    let count = 0;
+    const currentLevelValues = [];
+    while (count < length) {
+      const node = q.shift();
+      currentLevelValues.push(node.val);
+      if (node.left) q.push(node.left);
+      if (node.right) q.push(node.right);
+      count++;
+    }
+    result.push(currentLevelValues);
+  }
+  return result;
 }
