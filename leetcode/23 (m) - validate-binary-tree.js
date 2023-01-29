@@ -1,7 +1,7 @@
 /*
 Validate Binary Search Tree
 Level: medium
-o(n), s(n) - medium
+o(m * n), s(m * n) - medium
 
 https://leetcode.com/problems/validate-binary-search-tree/
 Given the root of a binary tree, determine if it is a valid binary search tree (BST).

@@ -11,7 +11,7 @@ An island is surrounded by water and is formed by connecting adjacent lands hori
 #medium
 */
 
-// o(n) s(n) - bfs
+// o(m * n) s(m * n) - bfs
 /**
  * @param {character[][]} grid
  * @return {number}
@@ -80,7 +80,7 @@ function dfs(grid, currentRow, currentCol) {
   }
 }
 
-// o(n) s(n) - dfs
+// o(m * n) s(m * n) - dfs
 /**
  * @param {character[][]} grid
  * @return {number}
