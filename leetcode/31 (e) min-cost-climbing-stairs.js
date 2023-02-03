@@ -3,7 +3,7 @@ Min Cost Climbing Stairs
 Level: easy
 Answer 1 : DP Top Down - o(n) s(n) - easy
 Answer 2 : DP Bottom Up - o(n) s(n) - easy
-Answer 3 : DP Bottom Up (optimizaed without keeping array) - o(n) s(1) - easy
+Answer 3 : DP Bottom Up (optimized without keeping array) - o(n) s(1) - easy
 
 https://leetcode.com/problems/min-cost-climbing-stairs/
 You are given an integer array cost where cost[i] is the cost of ith step on a staircase. Once you pay the cost, you can either climb one or two steps.
