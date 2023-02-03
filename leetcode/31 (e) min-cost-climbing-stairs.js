@@ -3,6 +3,7 @@ Min Cost Climbing Stairs
 Level: easy
 Answer 1 : DP Top Down - o(n) s(n) - easy
 Answer 2 : DP Bottom Up - o(n) s(n) - easy
+Answer 3 : DP Bottom Up (optimizaed without keeping array) - o(n) s(1) - easy
 
 https://leetcode.com/problems/min-cost-climbing-stairs/
 You are given an integer array cost where cost[i] is the cost of ith step on a staircase. Once you pay the cost, you can either climb one or two steps.
@@ -49,4 +50,23 @@ function minCostClimbingStairsBottomUp(cost) {
     dp.push((cost[i] || 0) + Math.min(dp[i - 1], dp[i - 2]));
   }
   return Math.min(dp[n - 1], dp[n - 2]);
+}
+
+// o(n) s(1)
+/**
+ * @param {number[]} cost
+ * @return {number}
+ */
+function minCostClimbingStairsBottomUp2(cost) {
+  const n = cost.length;
+  if (n === 0) return 0;
+  if (n === 1) return cost[1];
+  let dpOne = cost[0];
+  let dpTwo = cost[1];
+  for (let i = 2; i < n; i++) {
+    const current = cost[i] + Math.min(dpOne, dpTwo);
+    dpOne = dpTwo;
+    dpTwo = current;
+  }
+  return Math.min(dpOne, dpTwo);
 }
