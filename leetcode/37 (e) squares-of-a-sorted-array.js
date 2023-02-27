@@ -31,13 +31,12 @@ function sortedSquares2(nums) {
   let res = Array(nums.length).fill(0);
   for (let i = res.length - 1; i >= 0; i--) {
     if (Math.abs(nums[start]) > Math.abs(nums[end])) {
-      value = nums[start] * nums[start];
+      res[i] = nums[start] * nums[start];
       start++;
     } else {
-      value = nums[end] * nums[end];
+      res[i] = nums[end] * nums[end];
       end--;
     }
-    res[i] = value;
   }
   return res;
 }
