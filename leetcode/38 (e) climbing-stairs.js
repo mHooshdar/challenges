@@ -25,10 +25,10 @@ function climbStairsTopDownFn(n, dp) {
  * @param {number} n
  * @return {number}
  */
-var climbStairsTopDown = function (n) {
+function climbStairsTopDown(n) {
   const dp = [];
   return climbStairsTopDownFn(n, dp);
-};
+}
 
 // o(n) s(n)
 /**
